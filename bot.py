@@ -15,11 +15,11 @@ from telegram.constants import ParseMode
 # ═══════════════════════════════════════════════════
 #  تنظیمات اصلی
 # ═══════════════════════════════════════════════════
-BOT_TOKEN  = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN")
+BOT_TOKEN  = os.getenv("BOT_TOKEN", "اینجا_توکن_رو_بذار")
 ADMIN_ID   = int(os.getenv("ADMIN_ID", "0"))
-PANEL_URL  = os.getenv("PANEL_URL", "https://156.253.5.155:1050/00MmZQQzNot9ZAclys")
+PANEL_URL  = os.getenv("PANEL_URL", "https://156.253.5.155:443/00MmZQQzNot9ZAclys")
 PANEL_USER = os.getenv("PANEL_USER", "admin")
-PANEL_PASS = os.getenv("PANEL_PASS", "admin")
+PANEL_PASS = os.getenv("PANEL_PASS", "@Bahar98")
 INBOUND_ID = int(os.getenv("INBOUND_ID", "1"))
 
 CARD_NUMBER = "6104 3378 5470 0694"
@@ -167,7 +167,7 @@ def panel_login():
     try:
         r = requests.post(
             f"{PANEL_URL}/login",
-            json={"username": PANEL_USER, "password": PANEL_PASS},
+            data={"username": PANEL_USER, "password": PANEL_PASS},
             verify=False, timeout=15
         )
         logger.info(f"Panel login status: {r.status_code} | body: {r.text[:200]}")
